@@ -1,26 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
+const Equipe = (props) =>{
+
+return(
+  <div>
+    <Sobre username={props.nome} cargo={props.cargo} 
+           idade={props.idade}/>
+  </div>
+  );
+}
+const Sobre = (props) => {
+  return(
+    <div>
+      <h2>Olá sou o(a) {props.username}</h2>
+      <h3>Cargo:{props.cargo}</h3>
+      <h3>Idade:{props.idade} anos</h3>
+</div>
+  );
+}
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <h1>Conheça nossa equipe:</h1>
+      <Equipe nome="Ana Silva" cargo="Desenvolvedora Frontend" idade="28"/>
     </div>
   );
 }
-
-
 export default App;
